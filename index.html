@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SACRED MOVEMENT COLLECTIVE | INDIGENOUS SOMATICS</title>
+    <title>SACRED MOVEMENT COLLECTIVE | Indigenous Somatics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -162,14 +162,26 @@
             margin: 0 auto;
         }
         
-        .hero-immersive h1 {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            font-weight: 300;
+        .main-title {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
             line-height: 1.1;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease 0.5s forwards;
+            letter-spacing: 2px;
+        }
+        
+        .sub-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: var(--accent);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.7s forwards;
+            letter-spacing: 1px;
         }
         
         .hero-immersive p {
@@ -178,7 +190,7 @@
             color: rgba(255, 255, 255, 0.8);
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.8s forwards;
+            animation: fadeInUp 1s ease 0.9s forwards;
         }
         
         .cta-button {
@@ -196,6 +208,7 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease 1.1s forwards;
+            text-decoration: none;
         }
         
         .cta-button:hover {
@@ -377,6 +390,7 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
+            text-decoration: none;
         }
         
         .free-class-floating:hover {
@@ -398,6 +412,14 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.8rem;
+            }
+            
+            .sub-title {
+                font-size: 1.4rem;
+            }
+            
             .hero-immersive h1 {
                 font-size: 2.5rem;
             }
@@ -449,12 +471,12 @@
         <div class="container nav-container">
             <a href="#" class="nav-logo">
                 <i class="fas fa-spa"></i>
-                Zen Flow
+                SACRED MOVEMENT
             </a>
             <ul class="nav-menu">
                 <li><a href="#practice">Practice</a></li>
                 <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="teacher-profile.html">Teachers</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -464,9 +486,10 @@
     <section class="hero-immersive">
         <div class="container">
             <div class="hero-content">
-                <h1>SACRED MOVEMENT COLLECTIVE | INDIGENOUS SOMATICS</h1>
+                <h1 class="main-title">SACRED MOVEMENT COLLECTIVE</h1>
+                <h2 class="sub-title">INDIGENOUS SOMATICS</h2>
                 <p>Immerse yourself in the transformative practice of yoga. Move with intent and align with purpose.</p>
-                <button class="cta-button">Begin Your Journey <i class="fas fa-arrow-right"></i></button>
+                <a href="#practice" class="cta-button">Begin Your Journey <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -476,8 +499,8 @@
         <div class="container">
             <div class="content-card">
                 <h2>Our Practice Philosophy</h2>
-                <p>At Zen Flow, we believe yoga is more than physical exercise—it's a pathway to self-discovery and inner peace. Our approach combines ancient wisdom with modern understanding to create a practice that meets you where you are.</p>
-                <button class="cta-button">Explore Our Classes <i class="fas fa-arrow-right"></i></button>
+                <p>At Sacred Movement Collective, we honor the wisdom of indigenous somatic practices. Our approach integrates ancient traditions with contemporary understanding to create a practice that connects you to your body's innate intelligence.</p>
+                <a href="#schedule" class="cta-button">Explore Our Classes <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -486,9 +509,9 @@
     <section class="parallax-section section-2" id="teachers">
         <div class="container">
             <div class="content-card">
-                <h2>Guided by Masters</h2>
-                <p>Our instructors are more than teachers—they're guides on your yoga journey. Each brings decades of experience, deep knowledge of anatomy and philosophy, and a genuine passion for helping students discover their potential.</p>
-                <button class="cta-button">Meet Our Teachers <i class="fas fa-arrow-right"></i></button>
+                <h2>Guided by Ancestral Wisdom</h2>
+                <p>Our instructors are keepers of traditional knowledge, blending indigenous movement practices with contemporary yoga. Each teacher brings deep cultural understanding and a commitment to honoring the roots of somatic practice.</p>
+                <a href="teacher-profile.html" class="cta-button">Meet Our Guides <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -496,41 +519,41 @@
     <!-- Timeline Schedule Section -->
     <section class="timeline-section" id="schedule">
         <div class="container timeline-container">
-            <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; font-weight: 300;">Weekly Class Schedule</h2>
+            <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; font-weight: 300;">Weekly Practice Schedule</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Morning Flow</h3>
+                        <h3>Morning Grounding</h3>
                         <p class="timeline-time">7:00 AM - 8:00 AM</p>
-                        <p>Energize your day with this invigorating vinyasa practice</p>
-                        <p><strong>With Michael</strong></p>
+                        <p>Connect with earth energies through grounding asanas</p>
+                        <p><strong>With Kai</strong></p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Gentle Hatha</h3>
+                        <h3>Ancestral Flow</h3>
                         <p class="timeline-time">10:00 AM - 11:00 AM</p>
-                        <p>Perfect for beginners or those seeking a slower pace</p>
-                        <p><strong>With Sarah</strong></p>
+                        <p>Honor traditional movement patterns and breath work</p>
+                        <p><strong>With Lena</strong></p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Power Vinyasa</h3>
+                        <h3>Elemental Vinyasa</h3>
                         <p class="timeline-time">5:30 PM - 6:30 PM</p>
-                        <p>Challenge your strength and flexibility in this dynamic class</p>
-                        <p><strong>With Michael</strong></p>
+                        <p>Flow through sequences honoring earth, water, fire, air</p>
+                        <p><strong>With Kai</strong></p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Evening Yin</h3>
+                        <h3>Evening Release</h3>
                         <p class="timeline-time">7:00 PM - 8:00 PM</p>
-                        <p>Release tension and prepare for restful sleep</p>
-                        <p><strong>With Sarah</strong></p>
+                        <p>Surrender and restore with moon-inspired practices</p>
+                        <p><strong>With Lena</strong></p>
                     </div>
                     <div class="timeline-marker"></div>
                 </div>
@@ -543,16 +566,16 @@
         <div class="container">
             <div class="content-card">
                 <h2>Begin Your Journey</h2>
-                <p>Your first step toward transformation begins here. Whether you're new to yoga or deepening your practice, we have a place for you in our community.</p>
-                <button class="cta-button">Claim Your Free Class <i class="fas fa-arrow-right"></i></button>
+                <p>Your first step toward transformation begins here. Whether you're new to somatic practice or deepening your connection, we have a place for you in our community.</p>
+                <a href="https://classpass.com/member-signup/getclasspass" target="_blank" class="cta-button">Claim Your Free Class <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Floating Free Class Banner -->
-    <div class="free-class-floating">
+    <a href="https://classpass.com/member-signup/getclasspass" target="_blank" class="free-class-floating">
         Free Class Pass <i class="fas fa-gift"></i>
-    </div>
+    </a>
 
     <script>
         // Navigation show/hide on scroll
