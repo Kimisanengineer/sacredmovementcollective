@@ -6,6 +6,8 @@
     <title>SACRED MOVEMENT COLLECTIVE | Indigenous Somatics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Pinyon Script font for titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         * {
@@ -163,14 +165,17 @@
         }
         
         .main-title {
-            font-size: 4.5rem;
+            font-family: 'Pinyon Script', cursive;
+            font-weight: 400;
+            font-size: 5.5rem;
             margin-bottom: 10px;
-            font-weight: 700;
-            line-height: 1.1;
+            line-height: 1;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease 0.5s forwards;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            color: var(--light);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .sub-title {
@@ -182,6 +187,8 @@
             transform: translateY(30px);
             animation: fadeInUp 1s ease 0.7s forwards;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
         }
         
         .hero-immersive p {
@@ -333,12 +340,40 @@
             padding: 25px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(212, 175, 55, 0.3);
         }
         
         .timeline-content h3 {
             color: var(--accent);
             margin-bottom: 10px;
             font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .timeline-content h3 .register-link {
+            font-size: 0.9rem;
+            color: var(--light);
+            text-decoration: none;
+            background: rgba(212, 175, 55, 0.2);
+            padding: 5px 12px;
+            border-radius: 15px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        
+        .timeline-content h3 .register-link:hover {
+            background: var(--accent);
+            color: var(--dark);
+            border-color: var(--accent);
         }
         
         .timeline-content p {
@@ -349,6 +384,8 @@
         .timeline-time {
             font-weight: 600;
             color: var(--light);
+            display: block;
+            margin-bottom: 8px;
         }
         
         .timeline-marker {
@@ -402,6 +439,318 @@
             margin-left: 10px;
         }
         
+        /* Teacher Profile Styles */
+        .teacher-profile {
+            display: none;
+            min-height: 100vh;
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+        
+        .teacher-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .header-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .profile-name {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 3rem;
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+        
+        .profile-title {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .teacher-content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--light);
+            font-weight: 600;
+        }
+        
+        .bio-text {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .specialty-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .specialty-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .specialty-name {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        .classes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .class-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .class-item:hover {
+            transform: translateX(5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .class-info {
+            flex: 1;
+        }
+        
+        .class-name {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        .class-time {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .class-action {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--light);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        
+        .class-action:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: rgba(212, 175, 55, 0.3);
+            font-size: 1.5rem;
+        }
+        
+        /* Back to Home Button */
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .back-button:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateX(-5px);
+        }
+        
         /* Animations */
         @keyframes fadeInUp {
             to {
@@ -411,47 +760,58 @@
         }
         
         /* Responsive Design */
+        @media (max-width: 968px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .profile-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
         @media (max-width: 768px) {
             .main-title {
-                font-size: 2.8rem;
+                font-size: 4rem;
             }
             
-            .sub-title {
-                font-size: 1.4rem;
+            .teacher-header {
+                padding: 100px 0 40px;
             }
             
-            .hero-immersive h1 {
+            .profile-name {
                 font-size: 2.5rem;
             }
             
-            .content-card {
+            .teacher-content-card {
                 padding: 30px;
-                margin: 0 20px;
             }
             
-            .timeline:before {
-                left: 20px;
+            .specialties-grid {
+                grid-template-columns: 1fr;
             }
             
-            .timeline-item {
-                width: 100%;
-                padding-left: 50px;
-                padding-right: 0;
-                text-align: left;
+            .timeline-content h3 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
             
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-marker,
-            .timeline-item:nth-child(even) .timeline-marker {
-                left: 10px;
+            .timeline-content h3 .register-link {
+                align-self: flex-start;
             }
             
             .nav-menu {
                 display: none;
+            }
+            
+            .back-button {
+                top: 90px;
+                left: 20px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -460,7 +820,6 @@
     <!-- Video Background -->
     <div class="video-background">
         <video autoplay muted loop>
-            <!-- In a real implementation, this would be an actual yoga video -->
             <source src="#" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
@@ -471,111 +830,319 @@
         <div class="container nav-container">
             <a href="#" class="nav-logo">
                 <i class="fas fa-spa"></i>
-                SACRED MOVEMENT
+                <span style="font-family: 'Pinyon Script', cursive; font-size: 1.8rem; margin-left: 5px;">Sacred Movement Collective</span>
             </a>
             <ul class="nav-menu">
                 <li><a href="#practice">Practice</a></li>
                 <li><a href="#schedule">Schedule</a></li>
-                <li><a href="teacher-profile.html">Teachers</a></li>
+                <li><a href="#teachers" onclick="showTeacherProfile()">Teachers</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-immersive">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="main-title">SACRED MOVEMENT COLLECTIVE</h1>
-                <h2 class="sub-title">INDIGENOUS SOMATICS</h2>
-                <p>Immerse yourself in the transformative practice of yoga. Move with intent and align with purpose.</p>
-                <a href="#practice" class="cta-button">Begin Your Journey <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Parallax Section 1 -->
-    <section class="parallax-section section-1" id="practice">
-        <div class="container">
-            <div class="content-card">
-                <h2>Our Practice Philosophy</h2>
-                <p>At Sacred Movement Collective, we honor the wisdom of indigenous somatic practices. Our approach integrates ancient traditions with contemporary understanding to create a practice that connects you to your body's innate intelligence.</p>
-                <a href="#schedule" class="cta-button">Explore Our Classes <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Parallax Section 2 -->
-    <section class="parallax-section section-2" id="teachers">
-        <div class="container">
-            <div class="content-card">
-                <h2>Guided by Ancestral Wisdom</h2>
-                <p>Our instructors are keepers of traditional knowledge, blending indigenous movement practices with contemporary yoga. Each teacher brings deep cultural understanding and a commitment to honoring the roots of somatic practice.</p>
-                <a href="teacher-profile.html" class="cta-button">Meet Our Guides <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Schedule Section -->
-    <section class="timeline-section" id="schedule">
-        <div class="container timeline-container">
-            <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; font-weight: 300;">Weekly Practice Schedule</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Morning Grounding</h3>
-                        <p class="timeline-time">7:00 AM - 8:00 AM</p>
-                        <p>Connect with earth energies through grounding asanas</p>
-                        <p><strong>With Kai</strong></p>
-                    </div>
-                    <div class="timeline-marker"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Ancestral Flow</h3>
-                        <p class="timeline-time">10:00 AM - 11:00 AM</p>
-                        <p>Honor traditional movement patterns and breath work</p>
-                        <p><strong>With Lena</strong></p>
-                    </div>
-                    <div class="timeline-marker"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Elemental Vinyasa</h3>
-                        <p class="timeline-time">5:30 PM - 6:30 PM</p>
-                        <p>Flow through sequences honoring earth, water, fire, air</p>
-                        <p><strong>With Kai</strong></p>
-                    </div>
-                    <div class="timeline-marker"></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Evening Release</h3>
-                        <p class="timeline-time">7:00 PM - 8:00 PM</p>
-                        <p>Surrender and restore with moon-inspired practices</p>
-                        <p><strong>With Lena</strong></p>
-                    </div>
-                    <div class="timeline-marker"></div>
+    <!-- Main Website Content -->
+    <div id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-immersive">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="main-title">Sacred Movement Collective</h1>
+                    <h2 class="sub-title">INDIGENOUS SOMATICS</h2>
+                    <p>Immerse yourself in the transformative practice of yoga. Move with intent and align with purpose.</p>
+                    <a href="#practice" class="cta-button">Begin Your Journey <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Parallax Section 3 -->
-    <section class="parallax-section section-3" id="contact">
-        <div class="container">
-            <div class="content-card">
-                <h2>Begin Your Journey</h2>
-                <p>Your first step toward transformation begins here. Whether you're new to somatic practice or deepening your connection, we have a place for you in our community.</p>
-                <a href="https://classpass.com/member-signup/getclasspass" target="_blank" class="cta-button">Claim Your Free Class <i class="fas fa-arrow-right"></i></a>
+        <!-- Parallax Section 1 -->
+        <section class="parallax-section section-1" id="practice">
+            <div class="container">
+                <div class="content-card">
+                    <h2>Our Practice Philosophy</h2>
+                    <p>At Sacred Movement Collective, we honor the wisdom of indigenous somatic practices. Our approach integrates ancient traditions with contemporary understanding to create a practice that connects you to your body's innate intelligence.</p>
+                    <a href="#schedule" class="cta-button">Explore Our Classes <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Floating Free Class Banner -->
-    <a href="https://classpass.com/member-signup/getclasspass" target="_blank" class="free-class-floating">
-        Free Class Pass <i class="fas fa-gift"></i>
-    </a>
+        <!-- Parallax Section 2 -->
+        <section class="parallax-section section-2" id="teachers">
+            <div class="container">
+                <div class="content-card">
+                    <h2>Guided by Ancestral Wisdom</h2>
+                    <p>Our instructors are keepers of traditional knowledge, blending indigenous movement practices with contemporary yoga. Each teacher brings deep cultural understanding and a commitment to honoring the roots of somatic practice.</p>
+                    <a href="#teacher-profile" class="cta-button" onclick="showTeacherProfile()">Meet Our Guides <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Schedule Section -->
+        <section class="timeline-section" id="schedule">
+            <div class="container timeline-container">
+                <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; font-weight: 300;">Weekly Practice Schedule</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content" onclick="window.open('https://classpass.com/classes/morning-grounding', '_blank')">
+                            <h3>
+                                Morning Grounding
+                                <a href="https://classpass.com/classes/morning-grounding" target="_blank" class="register-link" onclick="event.stopPropagation()">
+                                    Register <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </h3>
+                            <span class="timeline-time">7:00 AM - 8:00 AM</span>
+                            <p>Connect with earth energies through grounding asanas</p>
+                            <p><strong>With Kai</strong></p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content" onclick="window.open('https://classpass.com/classes/ancestral-flow', '_blank')">
+                            <h3>
+                                Ancestral Flow
+                                <a href="https://classpass.com/classes/ancestral-flow" target="_blank" class="register-link" onclick="event.stopPropagation()">
+                                    Register <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </h3>
+                            <span class="timeline-time">10:00 AM - 11:00 AM</span>
+                            <p>Honor traditional movement patterns and breath work</p>
+                            <p><strong>With Lena</strong></p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content" onclick="window.open('https://classpass.com/classes/elemental-vinyasa', '_blank')">
+                            <h3>
+                                Elemental Vinyasa
+                                <a href="https://classpass.com/classes/elemental-vinyasa" target="_blank" class="register-link" onclick="event.stopPropagation()">
+                                    Register <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </h3>
+                            <span class="timeline-time">5:30 PM - 6:30 PM</span>
+                            <p>Flow through sequences honoring earth, water, fire, air</p>
+                            <p><strong>With Kai</strong></p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content" onclick="window.open('https://classpass.com/classes/evening-release', '_blank')">
+                            <h3>
+                                Evening Release
+                                <a href="https://classpass.com/classes/evening-release" target="_blank" class="register-link" onclick="event.stopPropagation()">
+                                    Register <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </h3>
+                            <span class="timeline-time">7:00 PM - 8:00 PM</span>
+                            <p>Surrender and restore with moon-inspired practices</p>
+                            <p><strong>With Lena</strong></p>
+                        </div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax Section 3 -->
+        <section class="parallax-section section-3" id="contact">
+            <div class="container">
+                <div class="content-card">
+                    <h2>Begin Your Journey</h2>
+                    <p>Your first step toward transformation begins here. Whether you're new to somatic practice or deepening your connection, we have a place for you in our community.</p>
+                    <a href="https://classpass.com/member-signup/getclasspass" target="_blank" class="cta-button">Claim Your Free Class <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Free Class Banner -->
+        <a href="https://classpass.com/member-signup/getclasspass" target="_blank" class="free-class-floating">
+            Free Class Pass <i class="fas fa-gift"></i>
+        </a>
+    </div>
+
+    <!-- Teacher Profile Section (Hidden by default) -->
+    <div id="teacher-profile" class="teacher-profile">
+        <a href="#" class="back-button" onclick="hideTeacherProfile()">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        
+        <section class="teacher-header">
+            <div class="header-background"></div>
+            <div class="container">
+                <div class="profile-container">
+                    <!-- Profile Card -->
+                    <div class="profile-card">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Kai - Yoga Teacher" class="profile-image">
+                        <h1 class="profile-name">Kai</h1>
+                        <p class="profile-title">Indigenous Somatic Guide & Earth Medicine Practitioner</p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Students</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">4.9</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                        
+                        <p style="color: rgba(255,255,255,0.8); margin: 20px 0; font-size: 0.95rem;">
+                            "Guiding you back to your body's innate wisdom through ancestral movement and earth-connected practice."
+                        </p>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="#schedule" class="cta-button" onclick="hideTeacherProfile(); setTimeout(() => document.querySelector('#schedule').scrollIntoView({behavior: 'smooth'}), 100)">
+                            Join My Classes <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div class="content-grid">
+                        <!-- About Card -->
+                        <div class="teacher-content-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <h2 class="card-title">My Journey</h2>
+                            </div>
+                            <div class="bio-text">
+                                <p>Born and raised in the Pacific Northwest, my journey with movement began as a child exploring the ancient forests and coastal waters. I come from a lineage of Coast Salish healers and have spent over a decade studying indigenous somatic practices across Turtle Island.</p>
+                                
+                                <p>My teaching weaves together traditional earth wisdom with contemporary understanding of trauma-informed practice. I believe that true healing happens when we remember our inherent connection to the land and listen to the intelligence of our bodies.</p>
+                                
+                                <p>When I'm not guiding practices, you'll find me foraging for medicinal plants, creating earth pigments for ritual art, or sitting in ceremony with community elders.</p>
+                            </div>
+                        </div>
+
+                        <!-- Specialties Card -->
+                        <div class="teacher-content-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <h2 class="card-title">My Specialties</h2>
+                            </div>
+                            <div class="specialties-grid">
+                                <div class="specialty-card">
+                                    <div class="specialty-icon">
+                                        <i class="fas fa-hands"></i>
+                                    </div>
+                                    <h3 class="specialty-name">Earth Grounding</h3>
+                                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Connecting to land through somatic practice</p>
+                                </div>
+                                <div class="specialty-card">
+                                    <div class="specialty-icon">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <h3 class="specialty-name">Breath Ceremony</h3>
+                                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Ancient breathing techniques for modern healing</p>
+                                </div>
+                                <div class="specialty-card">
+                                    <div class="specialty-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <h3 class="specialty-name">Fluid Movement</h3>
+                                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Water-inspired flow and release</p>
+                                </div>
+                                <div class="specialty-card">
+                                    <div class="specialty-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <h3 class="specialty-name">Ritual Practice</h3>
+                                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Ceremonial movement for transformation</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Classes Card -->
+                        <div class="teacher-content-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h2 class="card-title">My Classes</h2>
+                            </div>
+                            <div class="classes-list">
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <h3 class="class-name">Morning Grounding</h3>
+                                        <p class="class-time">Mon, Wed, Fri • 7:00 AM - 8:00 AM</p>
+                                    </div>
+                                    <button class="class-action" onclick="window.open('https://classpass.com/classes/morning-grounding', '_blank')">
+                                        Join <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <h3 class="class-name">Elemental Vinyasa</h3>
+                                        <p class="class-time">Tue, Thu • 5:30 PM - 6:30 PM</p>
+                                    </div>
+                                    <button class="class-action" onclick="window.open('https://classpass.com/classes/elemental-vinyasa', '_blank')">
+                                        Join <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <h3 class="class-name">Full Moon Ceremony</h3>
+                                        <p class="class-time">Monthly • 7:00 PM - 9:00 PM</p>
+                                    </div>
+                                    <button class="class-action" onclick="window.open('https://classpass.com/classes/full-moon', '_blank')">
+                                        Join <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonials Card -->
+                        <div class="teacher-content-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h2 class="card-title">Community Love</h2>
+                            </div>
+                            <div class="testimonials-grid">
+                                <div class="testimonial-card">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="testimonial-text">"Kai's grounding practices have transformed my relationship with anxiety. Their gentle guidance feels like coming home to my body after years of disconnection."</p>
+                                    <p class="testimonial-author">- Maya T.</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="quote-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
+                                    <p class="testimonial-text">"The way Kai weaves ancestral wisdom with modern practice is pure magic. Every class feels like a ceremony that nourishes my soul and strengthens my roots."</p>
+                                    <p class="testimonial-author">- River S.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script>
         // Navigation show/hide on scroll
@@ -616,29 +1183,71 @@
                     item.classList.add('visible');
                 }
             });
-            
-            // Color transitions
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-                    document.body.style.background = getComputedStyle(section).backgroundColor;
-                }
-            });
         });
 
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                if (this.getAttribute('href') !== '#teacher-profile') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
 
+        // Teacher profile functions
+        function showTeacherProfile() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('teacher-profile').style.display = 'block';
+            document.querySelector('.nav-minimal').classList.add('visible');
+            window.scrollTo(0, 0);
+        }
+
+        function hideTeacherProfile() {
+            document.getElementById('teacher-profile').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
         // Initialize animations
         window.dispatchEvent(new Event('scroll'));
+
+        // Teacher profile animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe teacher content cards
+        document.querySelectorAll('.teacher-content-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Observe profile card
+        const profileCard = document.querySelector('.profile-card');
+        if (profileCard) {
+            profileCard.style.opacity = '0';
+            profileCard.style.transform = 'translateY(20px)';
+            profileCard.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            setTimeout(() => {
+                profileCard.style.opacity = '1';
+                profileCard.style.transform = 'translateY(0)';
+            }, 300);
+        }
     </script>
 </body>
 </html>
