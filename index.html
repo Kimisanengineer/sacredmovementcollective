@@ -94,7 +94,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 30px 0;
+            padding: 20px 0;
             transition: var(--transition);
             transform: translateY(-100%);
         }
@@ -112,15 +112,16 @@
         }
         
         .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 0.9rem; /* Smaller font size */
+            font-weight: 500;
             color: var(--light);
             text-decoration: none;
+            font-family: 'Popsies', cursive; /* Matching the page title font */
         }
         
         .nav-logo i {
             color: var(--accent);
-            margin-right: 8px;
+            margin-right: 5px;
         }
         
         .nav-menu {
@@ -329,12 +330,13 @@
         .timeline-item:nth-child(odd) {
             left: 0;
             padding-right: 50px;
-            text-align: right;
+            text-align: left; /* Changed from right to left */
         }
         
         .timeline-item:nth-child(even) {
             left: 50%;
             padding-left: 50px;
+            text-align: left; /* Ensure left alignment for even items too */
         }
         
         .timeline-content {
@@ -359,6 +361,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 15px; /* Added gap for spacing */
         }
         
         .timeline-content h3 .register-link {
@@ -370,6 +373,8 @@
             border-radius: 15px;
             transition: var(--transition);
             border: 1px solid transparent;
+            white-space: nowrap; /* Prevent text wrapping */
+            margin-left: 15px; /* Added margin for spacing */
         }
         
         .timeline-content h3 .register-link:hover {
@@ -445,7 +450,7 @@
         .teacher-profile {
             display: none;
             min-height: 100vh;
-            padding: 120px 0 60px;
+            padding: 80px 0 60px; /* Reduced top padding */
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
         }
         
@@ -472,7 +477,7 @@
         .profile-container {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 60px;
+            gap: 40px; /* Reduced gap */
             align-items: start;
             max-width: 1000px;
             margin: 0 auto;
@@ -482,25 +487,26 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px; /* Reduced padding */
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
+            position: relative;
         }
         
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 180px; /* Slightly smaller */
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent);
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
         
         .profile-name {
             font-family: 'Popsies', cursive;
-            font-size: 3rem;
+            font-size: 2.5rem; /* Slightly smaller */
             color: var(--light);
             margin-bottom: 10px;
         }
@@ -515,7 +521,7 @@
         .profile-stats {
             display: flex;
             justify-content: space-around;
-            margin: 30px 0;
+            margin: 25px 0;
             padding: 20px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -541,7 +547,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin: 25px 0;
+            margin: 20px 0;
         }
         
         .social-link {
@@ -567,14 +573,14 @@
         .content-grid {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px; /* Reduced gap */
         }
         
         .teacher-content-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px; /* Reduced padding */
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
@@ -582,7 +588,7 @@
         .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .card-icon {
@@ -599,7 +605,7 @@
         }
         
         .card-title {
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Slightly smaller */
             color: var(--light);
             font-weight: 600;
         }
@@ -761,6 +767,33 @@
             }
         }
         
+        /* Tree/Trail Icon Styling */
+        .tree-trail-icon {
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .tree-trail-icon::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            height: 15px;
+            background: var(--accent);
+            transform: translateX(-50%);
+        }
+        
+        .tree-trail-icon::after {
+            content: '🌲';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+        }
+        
         /* Responsive Design */
         @media (max-width: 968px) {
             .profile-container {
@@ -780,15 +813,15 @@
             }
             
             .teacher-header {
-                padding: 100px 0 40px;
+                padding: 80px 0 40px; /* Adjusted padding */
             }
             
             .profile-name {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .teacher-content-card {
-                padding: 30px;
+                padding: 25px;
             }
             
             .specialties-grid {
@@ -803,6 +836,7 @@
             
             .timeline-content h3 .register-link {
                 align-self: flex-start;
+                margin-left: 0;
             }
             
             .nav-menu {
@@ -830,15 +864,14 @@
     <!-- Minimal Navigation -->
     <nav class="nav-minimal">
         <div class="container nav-container">
-            <a href="Where love becomes your practice" class="nav-logo">
-                <i class="logo - 2025 SACRED MOVEMENT COLLECTIVE.png">sacredmovementcollective.org</i>
-                <span style="font-family: 'Open Sans', cursive; font-size: 1.8rem; margin-left: 5px;"<span/>
+            <a href="#" class="nav-logo">
+                <i class="fas fa-leaf"></i>sacredmovementcollective.org
             </a>
             <ul class="nav-menu">
                 <li><a href="#practice">Practice</a></li>
                 <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#Yoga Teacher Profile">Teacher</a></li>
-                <li><a href="kimberlyayoka@pm.me">Contact</a></li>
+                <li><a href="#Yoga Teacher Profile" onclick="showTeacherProfile()">Teacher</a></li>
+                <li><a href="mailto:kimberlyayoka@pm.me">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -914,10 +947,10 @@
                         <div class="timeline-marker"></div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-content" onclick="window.open('https://classpass.com/classes/elemental-vinyasa', '_blank')">
+                        <div class="timeline-content" onclick="window.open('https://classpass.com/classes/roots-and-origins', '_blank')">
                             <h3>
-                                Elemental Vinyasa and Cooling Yin
-                                <a href="https://classpass.com/classes/elemental-vinyasa" target="_blank" class="register-link" onclick="event.stopPropagation()">
+                                Roots and Origins: Beginner's Yoga Class Series
+                                <a href="https://classpass.com/classes/roots-and-origins" target="_blank" class="register-link" onclick="event.stopPropagation()">
                                     Register <i class="fas fa-arrow-right"></i>
                                 </a>
                             </h3>
@@ -961,10 +994,8 @@
             Free Class Pass <i class="fas fa-gift"></i>
         </a>
         <a href="https://classpass.com/studios/seattle-bhakti-studio">
-
-<img alt="ClassPass Partner" src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-wellness-partner-black.png"" width="200px" />
-
-</a>
+            <img alt="ClassPass Partner" src="https://partners-new.classpass.com/hubfs/ClassPass/badges/ClassPass-wellness-partner-black.png" width="200px" style="position: fixed; bottom: 30px; left: 30px; z-index: 999;" />
+        </a>
     </div>
 
     <!-- Teacher Profile Section (Hidden by default) -->
@@ -989,7 +1020,9 @@
                                 <span class="stat-number">5+</span>
                                 <span class="stat-label">Years</span>
                             </div>
-                    
+                            <div class="stat">
+                                <span class="stat-number">6+</span>
+                                <span class="stat-label">Certifications</span>
                             </div>
                         </div>
                         
@@ -1004,7 +1037,6 @@
                             <a href="https://open.spotify.com/playlist/231WyFhtoC55rhpvQMhyxQ" class="social-link">
                                 <i class="fab fa-spotify"></i>
                             </a>
-    
                         </div>
                         
                         <a href="#schedule" class="cta-button" onclick="hideTeacherProfile(); setTimeout(() => document.querySelector('#schedule').scrollIntoView({behavior: 'smooth'}), 100)">
@@ -1018,7 +1050,7 @@
                         <div class="teacher-content-card">
                             <div class="card-header">
                                 <div class="card-icon">
-                                    <i class="fas fa-mountain"></i>
+                                    <div class="tree-trail-icon"></div>
                                 </div>
                                 <h2 class="card-title">My Journey</h2>
                             </div>
@@ -1037,7 +1069,7 @@
                                 <div class="card-icon">
                                     <i class="fas fa-seedling"></i>
                                 </div>
-                                <h2 class="card-title">Ares of Somatic Focus</h2>
+                                <h2 class="card-title">Areas of Somatic Focus</h2>
                             </div>
                             <div class="specialties-grid">
                                 <div class="specialty-card">
@@ -1082,7 +1114,7 @@
                             <div class="classes-list">
                                 <div class="class-item">
                                     <div class="class-info">
-                                        <h3 class="class-name">Morning Grounding (Free Drop-in)</h3>
+                                        <h3 class="class-name">Morning Grounding</h3>
                                         <p class="class-time">Mon • 8:00 AM - 8:30 AM</p>
                                     </div>
                                     <button class="class-action" onclick="window.open('https://us06web.zoom.us/meeting/register/HCKGJmCdRiyaNgptloOdIw')">
@@ -1091,19 +1123,28 @@
                                 </div>
                                 <div class="class-item">
                                     <div class="class-info">
-                                        <h3 class="class-name">Sunday's Dance of Patience</h3>
-                                        <p class="class-time">Sat • 10:00 AM - 11:00 am</p>
+                                        <h3 class="class-name">Ancestral Flow: Indigenous Somatics</h3>
+                                        <p class="class-time">Mon • 10:00 AM - 11:00 AM</p>
                                     </div>
-                                    <button class="class-action" onclick="window.open('https://www.eventbrite.com/e/sundays-dance-of-patience-tickets-1962849351248?aff=oddtdtcreator')">
+                                    <button class="class-action" onclick="window.open('https://us06web.zoom.us/meeting/register/OKTJV7PiToW04SLaoFhj-Q')">
                                         Join <i class="fas fa-arrow-right"></i>
                                     </button>
                                 </div>
                                 <div class="class-item">
                                     <div class="class-info">
-                                        <h3 class="class-name">Roots and Origins: Beginner's Online Yoga Classes (11/17-12/22 Drop-in donation or fee based)</h3>
-                                        <p class="class-time">Monthly • 7:00 PM - 8:00 PM</p>
+                                        <h3 class="class-name">Roots and Origins: Beginner's Yoga Class Series</h3>
+                                        <p class="class-time">Mon • 5:30 PM - 6:30 PM</p>
                                     </div>
-                                    <button class="class-action" onclick="window.open('https://www.eventbrite.com/e/roots-and-origins-online-beginner-yoga-classes-tickets-1928353590499?aff=oddtdtcreator')">
+                                    <button class="class-action" onclick="window.open('https://classpass.com/classes/roots-and-origins')">
+                                        Join <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                                <div class="class-item">
+                                    <div class="class-info">
+                                        <h3 class="class-name">Evening Yin Release</h3>
+                                        <p class="class-time">Mon • 7:00 PM - 8:00 PM</p>
+                                    </div>
+                                    <button class="class-action" onclick="window.open('https://classpass.com/classes/evening-release')">
                                         Join <i class="fas fa-arrow-right"></i>
                                     </button>
                                 </div>
@@ -1134,7 +1175,7 @@
                                         Thank you Kim for your hard work and for sharing your time, energy, and love with the community! ."</p>
                                     <p class="testimonial-author">- Katt.- Flow and Farm Brunch Harvest Retreat</p>
                                 </div>
-                            </div><div class="testimonial-card">
+                                <div class="testimonial-card">
                                     <div class="quote-icon">
                                         <i class="fas fa-quote-right"></i>
                                     </div>
@@ -1142,8 +1183,7 @@
                                         As a yoga beginner, I enjoyed it a lot, though sometimes my attention span, thanks to ADHD,  wandered with so many beautiful things around the farm. A slightly shorter session or breaking it into sections could be helpful."</p>
                                     <p class="testimonial-author">- Young.- Flow and Farm Brunch Harvest Retreat</p>
                                 </div>
-                        </div>
-                    </div><div class="testimonial-card">
+                                <div class="testimonial-card">
                                     <div class="quote-icon">
                                         <i class="fas fa-quote-right"></i>
                                     </div>
@@ -1151,15 +1191,18 @@
 I am curious what it would look like if Kim was positioned in the center of the class so that everyone can see and follow the poses better.."</p>
                                     <p class="testimonial-author">- Marizel.- Flow and Farm Brunch Harvest Retreat</p>
                                 </div>
-                    </div>
-                </div><div class="testimonial-card">
+                                <div class="testimonial-card">
                                     <div class="quote-icon">
                                         <i class="fas fa-quote-right"></i>
                                     </div>
                                     <p class="testimonial-text">"Doing yoga under the sun, surrounded by flowers, greens, cows and goats was a wonderful experience. 
-                                        It made me take time to seep into the life i’d like to live or spend more time in nature."</p>
+                                        It made me take time to seep into the life i'd like to live or spend more time in nature."</p>
                                     <p class="testimonial-author">- Axel.- Flow and Farm Brunch Harvest Retreat</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
